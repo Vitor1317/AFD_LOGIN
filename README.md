@@ -1,5 +1,5 @@
 ![](AFD.jpeg)
-# AFD_LOGIN
+# AFN_LOGIN
 ### 📦 Conjunto de Estados (Q)
 
 Q = { q0, q1, q2, q3, q4, q5, q6 }
@@ -40,3 +40,20 @@ A função δ: Q × Σ → Q define as transições entre estados. Abaixo estão
 - δ(q3, refresh_fail) → q4
 - δ(q4, start_login) → q1
 - δ(q5, new_token) → q2
+
+--- 
+### Sistema 
+![Acesse aqui](https://github.com/davi-oliveira/sigeap-front/tree/main)
+
+---
+
+### Regras do sistema 
+Uma interface de login será apresentada para o usuário, onde o citado deverá fazer uso das suas credenciais e autenticar-se. Segue o fluxo do sistema:
+* O usuário acessa a página de login por meio do link;
+* É necessário a inserção das credenciais de acesso, podendo gerar como resultado "sucesso" ou "falha";
+  - Caso sucesso: um access token e um refresh token é enviado para o navegador do usuário. Os cookies serão armazenados como Cookie Read-Only para favorecer a segurança;
+  - Caso falha: Mantém-se a tela de login como view principal.
+
+* O usuário, a partir do momento da recepção do token, fica autenticado no sistema. Após algum tempo o access token estará expirado e será necessário o uso do refresh token para obter um novo access token; e
+* Após algumas horas, o refresh token também ficará expirado, e quando acontecer o usuário será redirecionado para o 1º passo do fluxo (tela de login).
+ 
